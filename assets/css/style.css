@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  margin: 48px 24px;
+  color: #252525;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 24px;
+  gap: 16px;
+}
+.container .operation {
+  background-color: #252525;
+  border-radius: 5px;
+  color: #f0f0f0;
+}
+.container #counter {
+  border: 1px solid #252525;
+  border-radius: 5px;
+  width: auto;
+  padding: 0 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
