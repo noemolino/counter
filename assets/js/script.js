@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //structure
     const title = document.createElement('h1');
-    title.textContent = "counter";
+    title.textContent = "Counter";
     document.body.appendChild(title);
 
     const text = document.createElement('p');
-    text.textContent = "click the '+1' and '-1' buttons to see the counter changes";
+    text.textContent = "Click the '+1' and '-1' buttons to see the counter changes";
     document.body.appendChild(text);
 
     const container = document.createElement('div');
