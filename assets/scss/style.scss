@@ -1,34 +1,3 @@
+@import 'base';
 @import 'variables';
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
-    background-color: $secondary-color;
-    margin: 6*$spacing 3*$spacing;
-    color: $primary-color;
-}
-
-.container{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3*$spacing;
-    gap: 2*$spacing;
-
-    .operation {
-        background-color: $primary-color;
-        border-radius: $angles;
-        color: $secondary-color;
-    }
-
-    #counter {
-        border: 1px solid $primary-color;
-        border-radius: $angles;
-        width: auto;
-        padding: 0 5*$spacing;
-    }
-}
-
-
-
+@import 'responsive';
