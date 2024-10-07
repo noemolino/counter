@@ -1,32 +1,46 @@
-@import 'variables';
+@import "variables";
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
-    background-color: $secondary-color;
-    margin: 6*$spacing 3*$spacing;
-    color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: $secondary-color;
+  margin: 3 * $spacing;
+  padding: 0 2 * $spacing;
+  color: $primary-color;
 }
 
-.container{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3*$spacing;
-    gap: 2*$spacing;
-    width: 100%;
+.container {
+  display: flex;
+  // justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3 * $spacing;
+  gap: 2 * $spacing;
+  width: 100%;
 
-    .operation {
-        background-color: $primary-color;
-        border-radius: $angles;
-        color: $secondary-color;
-    }
+  .operation {
+    background-color: $primary-color;
+    border-radius: $angles;
+    color: $secondary-color;
+    padding: $spacing 2 * $spacing;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 
-    #counter {
-        border: 1px solid $primary-color;
-        border-radius: $angles;
-        width: auto;
-        padding: 0 5*$spacing;
+    &:hover {
+      background-color: #1e1e1e;
+      transform: scale(1.05);
     }
+  }
+
+  #counter {
+    border: 1px solid $primary-color;
+    border-radius: $angles;
+    width: auto;
+    padding: $spacing 5 * $spacing;
+    font-size: 24px;
+    background-color: $secondary-color;
+  }
 }

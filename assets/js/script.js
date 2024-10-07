@@ -4,34 +4,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttonClassName = "operation";
 
     //structure
-    const title = document.createElement('h1');
-    title.textContent = "Counter";
-    document.body.appendChild(title);
+    function createElement(tagName, className, innerHTML = '', id = '') {
+        const element = document.createElement(tagName);
+        if (className) element.classList.add(className);
+        if (innerHTML) element.innerHTML = innerHTML;
+        if (id) element.id = id;
+        return element;
+    }
 
-    const text = document.createElement('p');
-    text.textContent = "Click the '+1' and '-1' buttons to see the counter changes";
-    document.body.appendChild(text);
+    const title = createElement('h1', '', 'Counter');
+    const text = createElement('p', '', "Click the '+1' and '-1' buttons to see the counter changes");
+    const container = createElement('div', containerClassName);
 
-    const container = document.createElement('div');
-    container.classList.add(containerClassName);
-    document.body.appendChild(container);
+    document.body.append(title, text, container);
 
-    const increaseButton = document.createElement('button');
-    increaseButton.id = "increase";
-    increaseButton.textContent = "+ 1";
-    increaseButton.classList.add(buttonClassName);
-    container.appendChild(increaseButton);
+    const increaseButton = createElement('button', buttonClassName, '+ 1', 'increase');
+            const counterDisplay = createElement('div', '', '0', 'counter');
+            const decreaseButton = createElement('button', buttonClassName, '- 1', 'decrease');
 
-    const counterDisplay = document.createElement('div');
-    counterDisplay.id = 'counter';
-    counterDisplay.textContent = '0';
-    container.appendChild(counterDisplay);
-
-    const decreaseButton = document.createElement('button');
-    decreaseButton.id = "decrease";
-    decreaseButton.textContent = "- 1";
-    decreaseButton.classList.add(buttonClassName);
-    container.appendChild(decreaseButton);
+            container.append(increaseButton, counterDisplay, decreaseButton);
 
     //function
     let counterValue = 0;
@@ -40,15 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
         counterDisplay.textContent = counterValue;
     }
 
-    increaseButton.addEventListener('click', function(){
-        counterValue++;
-        counter()
-    })
-
-    decreaseButton.addEventListener('click', function(){
-        counterValue--;
-        counter();
-    })
+    container.addEventListener('click', function(event) {
+        if (event.target.matches('#increase')) {
+            counterValue++;
+            counter();
+        } else if (event.target.matches('#decrease')) {
+            counterValue--;
+            counter();
+        }
+    });
 
     increaseButton.setAttribute('aria-label', 'Increase the counter');
     decreaseButton.setAttribute('aria-label', 'Decrease the counter');
