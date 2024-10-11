@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.append(title, text, container);
 
     const increaseButton = createElement('button', buttonClassName, '+ 1', 'increase');
-            const counterDisplay = createElement('div', '', '0', 'counter');
-            const decreaseButton = createElement('button', buttonClassName, '- 1', 'decrease');
+    const counterDisplay = createElement('div', '', '0', 'counter');
+    const decreaseButton = createElement('button', buttonClassName, '- 1', 'decrease');
 
-            container.append(increaseButton, counterDisplay, decreaseButton);
+    container.append(increaseButton, counterDisplay, decreaseButton);
 
     //function
     let counterValue = 0;
